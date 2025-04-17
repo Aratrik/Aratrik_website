@@ -10,16 +10,16 @@
       font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
-      background: #f9f9f9;
+      background: linear-gradient(135deg, #e0f7fa, #ffffff);
       color: #333;
       line-height: 1.6;
     }
     header {
-      background: #ffffff; /* Removed gradient */
-      color: #333;
+      background: linear-gradient(135deg, #89f7fe, #66a6ff);
+      color: #fff;
       padding: 2rem 0 1rem;
       text-align: center;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
     header img {
       width: 150px;
@@ -27,67 +27,52 @@
       object-fit: cover;
       border-radius: 50%;
       margin-bottom: 1rem;
-      border: 4px solid #66a6ff;
+      border: 4px solid #ffffff;
+    }
+    .social-links {
+      margin: 10px 0;
+    }
+    .social-links a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 600;
+      transition: color 0.3s ease;
+      font-size: 1rem;
+    }
+    .social-links a:hover {
+      color: #333;
     }
     nav {
-      margin-top: 10px;
+      margin-top: 20px;
     }
     nav a {
-      color: #333;
+      color: #fff;
       margin: 0 15px;
       text-decoration: none;
       font-weight: 600;
       transition: color 0.3s ease;
     }
     nav a:hover {
-      color: #66a6ff;
+      color: #333;
     }
     section {
       padding: 50px 20px;
       max-width: 900px;
-      margin: auto;
+      margin: 30px auto;
       background: #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-      margin-top: 30px;
+      border-radius: 16px;
+      box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
     }
     section h2 {
       border-bottom: 2px solid #66a6ff;
       padding-bottom: 10px;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
       color: #333;
-    }
-    .button-group {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-      margin-top: 30px;
-    }
-    .button-group a {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      background: linear-gradient(135deg, #89f7fe, #66a6ff);
-      color: white;
-      padding: 12px 24px;
-      text-decoration: none;
-      border-radius: 30px;
-      font-weight: 600;
-      transition: background 0.3s ease, transform 0.2s ease;
-      font-size: 1rem;
-    }
-    .button-group a img {
-      width: 20px;
-      height: 20px;
-    }
-    .button-group a:hover {
-      background: linear-gradient(135deg, #66a6ff, #89f7fe);
-      transform: scale(1.05);
     }
     .publication-link {
       display: block;
-      margin-bottom: 15px;
+      margin-bottom: 18px;
       color: #4a90e2;
       text-decoration: none;
       font-weight: 600;
@@ -109,9 +94,16 @@
 <body>
 
 <header>
-  <!-- 🖼️ Add your profile image here -->
   <img src="AratrikPic.jpeg" alt="Aratrik Profile Image">
   <h1>Aratrik Chattopadhyay</h1>
+
+  <div class="social-links">
+    <a href="https://www.linkedin.com/in/aratrik-chatterjee-72381a121/" target="_blank">LinkedIn</a> |
+    <a href="mailto:aratrik@example.com">Gmail</a> |
+    <a href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID" target="_blank">Google Scholar</a> |
+    <a href="https://www.researchgate.net/profile/YOUR_PROFILE_NAME" target="_blank">ResearchGate</a>
+  </div>
+
   <nav>
     <a href="#about">About</a>
     <a href="#publications">Publications</a>
@@ -135,24 +127,19 @@
   <a class="publication-link" href="https://openaccess.thecvf.com/content/CVPR2024W/EVW/papers/Jha_RAVN_Reinforcement_Aided_Adaptive_Vector_Quantization_of_Deep_Neural_Networks_CVPRW_2024_paper.pdf" target="_blank">
     RAVN: Reinforcement Aided Adaptive Vector Quantization of Deep Neural Networks, CVPRW 2024
   </a>
+  <a class="publication-link" href="https://www.sciencedirect.com/science/article/abs/pii/S0167865522001532" target="_blank">
+    Detail Preserving Conditional Random Field as 2-D RNN for Gland Segmentation in Histology Images
+  </a>
+  <a class="publication-link" href="https://arxiv.org/pdf/2011.11078" target="_blank">
+    End-to-End Differentiable 6DoF Object Pose Estimation with Local and Global Constraints, NeurIPS DiffCVGP 2020
+  </a>
 </section>
 
 <section id="contact">
   <h2>Contact Me</h2>
-  <div class="button-group">
-    <a href="https://github.com/aratrik" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub">
-      GitHub
-    </a>
-    <a href="https://www.linkedin.com/in/aratrik-chatterjee-72381a121/" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
-      LinkedIn
-    </a>
-    <a href="mailto:yourname@example.com" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
-      Email Me
-    </a>
-  </div>
+  <p style="text-align: center;">
+    Feel free to connect with me on LinkedIn, Google Scholar, ResearchGate, or send me an Email!
+  </p>
 </section>
 
 <footer>
