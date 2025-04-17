@@ -10,13 +10,13 @@
       font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #e0f7fa, #ffffff);
+      background: linear-gradient(135deg, #f0f0f0, #ffffff);
       color: #333;
       line-height: 1.6;
     }
     header {
-      background: linear-gradient(135deg, #89f7fe, #66a6ff);
-      color: #fff;
+      background: #ffffff;
+      color: #333;
       padding: 2rem 0 1rem;
       text-align: center;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -27,42 +27,48 @@
       object-fit: cover;
       border-radius: 50%;
       margin-bottom: 1rem;
-      border: 4px solid #ffffff;
+      border: 4px solid #66a6ff;
     }
     .social-links {
       margin: 10px 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
     }
-    .social-links a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: #fff;
-      font-weight: 600;
-      transition: color 0.3s ease;
-      font-size: 1rem;
+    .social-links a img {
+      width: 30px;
+      height: 30px;
+      transition: transform 0.3s ease;
     }
-    .social-links a:hover {
-      color: #333;
+    .social-links a:hover img {
+      transform: scale(1.2);
     }
     nav {
       margin-top: 20px;
     }
     nav a {
-      color: #fff;
+      color: #333;
       margin: 0 15px;
       text-decoration: none;
       font-weight: 600;
       transition: color 0.3s ease;
+      cursor: pointer;
     }
     nav a:hover {
-      color: #333;
+      color: #66a6ff;
     }
     section {
+      display: none;
       padding: 50px 20px;
       max-width: 900px;
       margin: 30px auto;
       background: #ffffff;
       border-radius: 16px;
       box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
+    }
+    section.active {
+      display: block;
     }
     section h2 {
       border-bottom: 2px solid #66a6ff;
@@ -90,6 +96,17 @@
       font-size: 0.9rem;
     }
   </style>
+  <script>
+    function showTab(tabId) {
+      const sections = document.querySelectorAll('section');
+      sections.forEach(section => section.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+    }
+
+    window.onload = () => {
+      showTab('about');
+    }
+  </script>
 </head>
 <body>
 
@@ -98,23 +115,31 @@
   <h1>Aratrik Chattopadhyay</h1>
 
   <div class="social-links">
-    <a href="https://www.linkedin.com/in/aratrik-chatterjee-72381a121/" target="_blank">LinkedIn</a> |
-    <a href="mailto:aratrik@example.com">Gmail</a> |
-    <a href="https://scholar.google.com/citations?user=nrXPtBgAAAAJ&hl=en" target="_blank">Google Scholar</a> |
-    <a href="https://www.researchgate.net/profile/Aratrik-Chattopadhyay?ev=hdr_xprf" target="_blank">ResearchGate</a>
+    <a href="mailto:aratrik@example.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Gmail">
+    </a>
+    <a href="https://www.linkedin.com/in/aratrik-chatterjee-72381a121/" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+    </a>
+    <a href="https://scholar.google.com/citations?user=nrXPtBgAAAAJ&hl=en" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" alt="Google Scholar">
+    </a>
+    <a href="https://www.researchgate.net/profile/Aratrik-Chattopadhyay?ev=hdr_xprf" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png" alt="ResearchGate">
+    </a>
   </div>
 
   <nav>
-    <a href="#about">About</a>
-    <a href="#publications">Publications</a>
-    <a href="#contact">Contact</a>
+    <a onclick="showTab('about')">About Me</a>
+    <a onclick="showTab('publications')">Publications</a>
+    <a onclick="showTab('contact')">Contact</a>
   </nav>
 </header>
 
 <section id="about">
   <h2>About Me</h2>
   <p>
-    I am a Senior Tech Lead at Mercedes-Benz R&D Pvt. Ltd. I completed my Master's from IISc (Indian Institute of Science) 
+    I am a Senior Tech Lead at Mercedes-Benz R&D Pvt. Ltd. I completed my Master's from IISc (Indian Institute of Science)
     in Computer Science, specializing in 3D Computer Vision. Prior to joining IISc, I completed my B.Tech in Electrical Engineering from Jadavpur University.
   </p>
 </section>
@@ -138,7 +163,7 @@
 <section id="contact">
   <h2>Contact Me</h2>
   <p style="text-align: center;">
-    Feel free to connect with me on LinkedIn, Google Scholar, ResearchGate, or send me an Email!
+    Feel free to connect with me via the icons above!
   </p>
 </section>
 
