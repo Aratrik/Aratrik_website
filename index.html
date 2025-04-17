@@ -9,12 +9,12 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background: #ffffff;
-      color: #333;
+      background: #f4f6f8; /* Light grey background */
+      color: #2c3e50; /* Softer dark text */
       line-height: 1.6;
     }
     header {
-      background: #4CAF50;
+      background: #1e3a8a; /* Deep blue header */
       color: #fff;
       padding: 1.5rem 0;
       text-align: center;
@@ -28,15 +28,19 @@
       text-decoration: none;
       font-weight: bold;
     }
+    nav a:hover {
+      text-decoration: underline;
+    }
     section {
       padding: 40px 20px;
       max-width: 900px;
       margin: auto;
     }
     section h2 {
-      border-bottom: 2px solid #4CAF50;
+      border-bottom: 2px solid #1e3a8a;
       padding-bottom: 10px;
       margin-bottom: 20px;
+      color: #1e3a8a;
     }
     .button-group {
       display: flex;
@@ -46,58 +50,13 @@
       margin-top: 20px;
     }
     .button-group a {
-      background-color: #4CAF50;
+      background-color: #1e3a8a;
       color: white;
       padding: 12px 24px;
       text-decoration: none;
       border-radius: 8px;
       font-weight: bold;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
     .button-group a:hover {
-      background-color: #45a049;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #eee;
-      margin-top: 40px;
-      font-size: 0.9rem;
-    }
-    .publication-link {
-      display: block;
-      margin-bottom: 10px;
-      color: #4CAF50;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .publication-link:hover {
-      text-decoration: underline;
-    }
-  </style>
-</head>
-<body>
-
-<header>
-  <h1>Aratrik Chattopadhyay</h1>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#publications">Publications</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
-
-<section id="about">
-  <h2>About Me</h2>
-  <p>
-    I am a Senior Tech Lead at Mercedes-Benz R&D Pvt. Ltd. I completed my Master's from IISc (Indian Institute of Science) 
-    in Computer Science, specializing in 3D Computer Vision. Prior to joining IISc, I completed my B.Tech in Electrical Engineering from Jadavpur University.
-  </p>
-</section>
-
-<section id="publications">
-  <h2>Publications</h2>
-  <a class="publication-link" href="https://ieeexplore.ieee.org/abstract/document/10647301" target="_blank">
-    Lercpose: Learned Ranking and Contrastive Loss for Robust Head Pose Estimation, ICIP (Oral) 2024
-  </a>
-  <a class="publication-link" href="https://openaccess.thecvf.com/content/CVPR
+      background-color: #374
