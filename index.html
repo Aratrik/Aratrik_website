@@ -19,7 +19,7 @@
       color: #333;
       padding: 2rem 0 1rem;
       text-align: center;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     }
     header img {
       width: 150px;
@@ -27,21 +27,21 @@
       object-fit: cover;
       border-radius: 50%;
       margin-bottom: 1rem;
-      border: 4px solid #66a6ff;
     }
     .social-links {
       margin: 10px 0;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
     }
-    .social-links a img {
+    .social-links a {
+      margin: 0 10px;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .social-links img {
       width: 30px;
       height: 30px;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s;
     }
-    .social-links a:hover img {
+    .social-links img:hover {
       transform: scale(1.2);
     }
     nav {
@@ -55,7 +55,7 @@
       transition: color 0.3s ease;
       cursor: pointer;
     }
-    nav a:hover {
+    nav a:hover, nav a.active {
       color: #66a6ff;
     }
     section {
@@ -65,7 +65,7 @@
       margin: 30px auto;
       background: #ffffff;
       border-radius: 16px;
-      box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 6px 30px rgba(0, 0, 0, 0.05);
     }
     section.active {
       display: block;
@@ -96,17 +96,6 @@
       font-size: 0.9rem;
     }
   </style>
-  <script>
-    function showTab(tabId) {
-      const sections = document.querySelectorAll('section');
-      sections.forEach(section => section.classList.remove('active'));
-      document.getElementById(tabId).classList.add('active');
-    }
-
-    window.onload = () => {
-      showTab('about');
-    }
-  </script>
 </head>
 <body>
 
@@ -115,28 +104,28 @@
   <h1>Aratrik Chattopadhyay</h1>
 
   <div class="social-links">
-    <a href="mailto:aratrik@example.com" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Gmail">
-    </a>
     <a href="https://www.linkedin.com/in/aratrik-chatterjee-72381a121/" target="_blank">
       <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+    </a>
+    <a href="mailto:aratrik@example.com">
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Gmail">
     </a>
     <a href="https://scholar.google.com/citations?user=nrXPtBgAAAAJ&hl=en" target="_blank">
       <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" alt="Google Scholar">
     </a>
     <a href="https://www.researchgate.net/profile/Aratrik-Chattopadhyay?ev=hdr_xprf" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png" alt="ResearchGate">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/ResearchGate_icon_SVG.svg" alt="ResearchGate" style="width:30px;height:30px;">
     </a>
   </div>
 
   <nav>
-    <a onclick="showTab('about')">About Me</a>
-    <a onclick="showTab('publications')">Publications</a>
-    <a onclick="showTab('contact')">Contact</a>
+    <a class="tablink active" onclick="openTab('about')">About</a>
+    <a class="tablink" onclick="openTab('publications')">Publications</a>
+    <a class="tablink" onclick="openTab('contact')">Contact</a>
   </nav>
 </header>
 
-<section id="about">
+<section id="about" class="active">
   <h2>About Me</h2>
   <p>
     I am a Senior Tech Lead at Mercedes-Benz R&D Pvt. Ltd. I completed my Master's from IISc (Indian Institute of Science)
@@ -153,23 +142,36 @@
     RAVN: Reinforcement Aided Adaptive Vector Quantization of Deep Neural Networks, CVPRW 2024
   </a>
   <a class="publication-link" href="https://www.sciencedirect.com/science/article/abs/pii/S0167865522001532" target="_blank">
-    Detail Preserving Conditional Random Field as 2-D RNN for Gland Segmentation in Histology Images, Pattern Recognition Letters, 2022
+    Detail Preserving Conditional Random Field as 2-D RNN for Gland Segmentation in Histology Images, Pattern Recognition Letters 2022
   </a>
   <a class="publication-link" href="https://arxiv.org/pdf/2011.11078" target="_blank">
-    End-to-End Differentiable 6DoF Object Pose Estimation with Local and Global Constraints, NeurIPS DiffCVGP 2020
+    End-to-End Differentiable 6DoF Object Pose Estimation with Local and Global Constraints, NeurIPS DiffCVGP Workshop 2020
   </a>
 </section>
 
 <section id="contact">
   <h2>Contact Me</h2>
   <p style="text-align: center;">
-    Feel free to connect with me via the icons above!
+    Feel free to connect with me on LinkedIn, Google Scholar, ResearchGate, or send me an Email!
   </p>
 </section>
 
 <footer>
   <p>&copy; 2025 Aratrik Chattopadhyay. All rights reserved.</p>
 </footer>
+
+<script>
+function openTab(tabId) {
+  const tabs = document.querySelectorAll('section');
+  tabs.forEach(tab => tab.classList.remove('active'));
+
+  document.getElementById(tabId).classList.add('active');
+
+  const links = document.querySelectorAll('.tablink');
+  links.forEach(link => link.classList.remove('active'));
+  event.target.classList.add('active');
+}
+</script>
 
 </body>
 </html>
