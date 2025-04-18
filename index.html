@@ -225,32 +225,6 @@
       font-size: 0.9rem;
       transition: background 0.5s;
     }
-
-    .academic-item {
-      display: flex;
-      justify-content: space-between;
-      padding: 10px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    .academic-item:hover {
-      background: #e9e9e9;
-    }
-
-    .academic-item img {
-      width: 40px;
-      height: 40px;
-      object-fit: cover;
-      margin-right: 10px;
-      border-radius: 5px;
-    }
-
-    .academic-item.active {
-      background: #f0f0f0;
-      border-radius: 8px;
-    }
-
   </style>
 </head>
 <body>
@@ -302,32 +276,46 @@
   </p>
 </section>
 
+<section id="publications">
+  <h2>Publications</h2>
+  <a class="publication-link" href="https://ieeexplore.ieee.org/abstract/document/10647301" target="_blank">
+    Lercpose: Learned Ranking and Contrastive Loss for Robust Head Pose Estimation, ICIP (Oral) 2024
+  </a>
+  <a class="publication-link" href="https://openaccess.thecvf.com/content/CVPR2024W/EVW/papers/Jha_RAVN_Reinforcement_Aided_Adaptive_Vector_Quantization_of_Deep_Neural_Networks_CVPRW_2024_paper.pdf" target="_blank">
+    RAVN: Reinforcement Aided Adaptive Vector Quantization of Deep Neural Networks, CVPRW 2024
+  </a>
+  <a class="publication-link" href="https://www.sciencedirect.com/science/article/abs/pii/S0167865522001532" target="_blank">
+    Detail Preserving Conditional Random Field as 2-D RNN for Gland Segmentation in Histology Images
+  </a>
+  <a class="publication-link" href="https://arxiv.org/pdf/2011.11078" target="_blank">
+    End-to-End Differentiable 6DoF Object Pose Estimation with Local and Global Constraints, NeurIPS DiffCVGP 2020
+  </a>
+</section>
+
 <section id="academics">
   <h2>Academics</h2>
-  <div class="academic-item" onclick="toggleAcademicDetails('academic-1')">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Indian_Institute_of_Science_logo.png" alt="IISc">
-    <span>Master's in Computer Science, Indian Institute of Science</span>
-    <span>2017</span>
-  </div>
-  <div id="academic-1" class="academic-details" style="display:none;">
-    <ul>
-      <li>Specialized in 3D Computer Vision, Deep Learning</li>
-      <li>Research Focus: Pose Estimation, Object Recognition</li>
-    </ul>
-  </div>
+  <ul>
+    <li><strong>2023:</strong> Senior Tech-Lead, Mercedes-Benz R&D, Bangalore</li>
+    <li><strong>2021:</strong> Senior Research Engineer, Mercedes-Benz R&D, Bangalore</li>
+    <li><strong>2019:</strong> Junior Engineer, Mercedes-Benz R&D, Bangalore</li>
+    <li><strong>2019:</strong> Research Assistant, Indian Statistical Institute, Kolkata</li>
+    <li><strong>2017:</strong> Master's in Computer Science, Indian Institute of Science (IISc), Bengaluru</li>
+    <li><strong>2015:</strong> Bachelor's in Electrical Engineering, Jadavpur University, Kolkata</li>
+    <li><strong>Research Areas:</strong> 3D Computer Vision, Deep Learning, Pose Estimation</li>
+  </ul>
+</section>
 
-  <div class="academic-item" onclick="toggleAcademicDetails('academic-2')">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Jadavpur_University_Logo.png/1200px-Jadavpur_University_Logo.png" alt="Jadavpur University">
-    <span>Bachelor's in Electrical Engineering, Jadavpur University</span>
-    <span>2015</span>
-  </div>
-  <div id="academic-2" class="academic-details" style="display:none;">
-    <ul>
-      <li>Focus on Embedded Systems, Robotics</li>
-      <li>Research Focus: Signal Processing, Control Systems</li>
-    </ul>
-  </div>
-
+<section id="news">
+  <h2>News</h2>
+  <ul>
+    <li><strong>Mar 2025:</strong> Technical Publication Award at Mercedes-Benz </li>
+    <li><strong>Sep 2024:</strong> Paper accepted at ICIP 2024 (Oral Presentation)</li>
+    <li><strong>April 2024:</strong> RAVN accepted at CVPR 2024 Workshop (RAVN project)</li>
+    <li><strong>June 2022:</strong> DPCRF got accepted at Pattern Recognition Letters</li>
+    <li><strong>Oct 2020:</strong> End-to-end differentiable 6DoF object pose estimation with local and global constraints got accepted at Neurips DiffCVGP workshop, 2020</li>
+    <li><strong>April 2019:</strong> Filed my First Patent!!</li>
+    <li><strong>Jan 2019:</strong> Joined Mercedes-Benz R&D as a junior engineer</li>
+  </ul>
 </section>
 
 <footer>
@@ -360,15 +348,6 @@
       document.documentElement.setAttribute('data-theme', 'light');
     }
   });
-
-  function toggleAcademicDetails(id) {
-    const academicDetails = document.getElementById(id);
-    if (academicDetails.style.display === "none") {
-      academicDetails.style.display = "block";
-    } else {
-      academicDetails.style.display = "none";
-    }
-  }
 </script>
 
 </body>
