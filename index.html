@@ -1,127 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Aratrik Chattopadhyay - Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
+    :root {
+      --bg-color: linear-gradient(135deg, #f0f0f0, #ffffff);
+      --text-color: #333;
+      --section-bg: #fff;
+      --link-color: #4a90e2;
+      --link-hover: #1c60d6;
+    }
+
+    [data-theme="dark"] {
+      --bg-color: linear-gradient(135deg, #1c1c1c, #333);
+      --text-color: #f0f0f0;
+      --section-bg: #2c2c2c;
+      --link-color: #66a6ff;
+      --link-hover: #89f7fe;
+    }
+
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #f0f0f0, #ffffff);
-      color: #333;
-      line-height: 1.6;
+      background: var(--bg-color);
+      color: var(--text-color);
+      transition: background 0.5s, color 0.5s;
     }
+
     header {
-      background: #ffffff;
-      color: #333;
-      padding: 2rem 0 1rem;
+      background: var(--section-bg);
       text-align: center;
+      padding: 2rem 0 1rem;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      transition: background 0.5s;
     }
+
     header img {
       width: 150px;
       height: 150px;
       object-fit: cover;
       border-radius: 50%;
       margin-bottom: 1rem;
+      border: none;
     }
+
     .social-links {
       margin: 10px 0;
     }
+
     .social-links a {
-      margin: 0 10px;
-      text-decoration: none;
+      margin: 0 8px;
       display: inline-block;
     }
+
     .social-links img {
-      width: 30px;
-      height: 30px;
-      transition: transform 0.3s;
+      width: 28px;
+      height: 28px;
+      vertical-align: middle;
+      transition: transform 0.3s ease;
     }
+
     .social-links img:hover {
-      transform: scale(1.2);
+      transform: scale(1.1);
     }
+
+    .resume-button, .theme-toggle {
+      display: inline-block;
+      margin: 10px 10px 20px;
+      padding: 8px 20px;
+      background: linear-gradient(135deg, #89f7fe, #66a6ff);
+      color: white;
+      border: none;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .resume-button:hover, .theme-toggle:hover {
+      background: linear-gradient(135deg, #66a6ff, #89f7fe);
+      transform: scale(1.05);
+    }
+
     nav {
-      margin-top: 20px;
+      margin-top: 1rem;
     }
+
     nav a {
-      color: #333;
       margin: 0 15px;
       text-decoration: none;
+      color: var(--text-color);
       font-weight: 600;
       transition: color 0.3s ease;
       cursor: pointer;
     }
-    nav a:hover, nav a.active {
+
+    nav a.active {
       color: #66a6ff;
     }
+
+    nav a:hover {
+      color: #66a6ff;
+    }
+
     section {
       display: none;
-      padding: 50px 20px;
       max-width: 900px;
       margin: 30px auto;
-      background: #ffffff;
-      border-radius: 16px;
-      box-shadow: 0 6px 30px rgba(0, 0, 0, 0.05);
+      padding: 40px 20px;
+      background: var(--section-bg);
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s ease;
     }
+
     section.active {
       display: block;
+      opacity: 1;
+      transform: translateY(0);
     }
+
     section h2 {
       border-bottom: 2px solid #66a6ff;
       padding-bottom: 10px;
-      margin-bottom: 25px;
-      color: #333;
+      margin-bottom: 20px;
+      color: var(--text-color);
     }
+
     .publication-link {
       display: block;
-      margin-bottom: 18px;
-      color: #4a90e2;
+      margin-bottom: 16px;
+      color: var(--link-color);
       text-decoration: none;
       font-weight: 600;
-      transition: color 0.3s ease;
     }
+
     .publication-link:hover {
-      color: #1c60d6;
+      color: var(--link-hover);
     }
+
     footer {
       text-align: center;
       padding: 1rem;
       margin-top: 50px;
-      background: #ffffff;
+      background: var(--section-bg);
       color: #777;
       font-size: 0.9rem;
+      transition: background 0.5s;
     }
   </style>
 </head>
 <body>
 
 <header>
-  <img src="AratrikPic.jpeg" alt="Aratrik Profile Image">
+  <img src="AratrikPic.jpeg" alt="Aratrik Profile Image" />
   <h1>Aratrik Chattopadhyay</h1>
 
   <div class="social-links">
     <a href="https://www.linkedin.com/in/aratrik-chatterjee-72381a121/" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+      <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" />
     </a>
     <a href="mailto:aratrik@example.com">
-      <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Gmail">
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Gmail" />
     </a>
     <a href="https://scholar.google.com/citations?user=nrXPtBgAAAAJ&hl=en" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" alt="Google Scholar">
+      <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" alt="Google Scholar" />
     </a>
     <a href="https://www.researchgate.net/profile/Aratrik-Chattopadhyay?ev=hdr_xprf" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/ResearchGate_icon_SVG.svg" alt="ResearchGate" style="width:30px;height:30px;">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111725.png" alt="ResearchGate" />
     </a>
   </div>
 
+  <a href="resume.pdf" class="resume-button" download>Download Resume</a>
+  <button class="theme-toggle" onclick="toggleTheme()">Toggle Dark Mode</button>
+
   <nav>
-    <a class="tablink active" onclick="openTab('about')">About</a>
-    <a class="tablink" onclick="openTab('publications')">Publications</a>
-    <a class="tablink" onclick="openTab('contact')">Contact</a>
+    <a class="tab-link active" data-tab="about">About</a>
+    <a class="tab-link" data-tab="publications">Publications</a>
+    <a class="tab-link" data-tab="contact">Contact</a>
   </nav>
 </header>
 
@@ -142,17 +205,17 @@
     RAVN: Reinforcement Aided Adaptive Vector Quantization of Deep Neural Networks, CVPRW 2024
   </a>
   <a class="publication-link" href="https://www.sciencedirect.com/science/article/abs/pii/S0167865522001532" target="_blank">
-    Detail Preserving Conditional Random Field as 2-D RNN for Gland Segmentation in Histology Images, Pattern Recognition Letters 2022
+    Detail Preserving Conditional Random Field as 2-D RNN for Gland Segmentation in Histology Images
   </a>
   <a class="publication-link" href="https://arxiv.org/pdf/2011.11078" target="_blank">
-    End-to-End Differentiable 6DoF Object Pose Estimation with Local and Global Constraints, NeurIPS DiffCVGP Workshop 2020
+    End-to-End Differentiable 6DoF Object Pose Estimation with Local and Global Constraints, NeurIPS DiffCVGP 2020
   </a>
 </section>
 
 <section id="contact">
   <h2>Contact Me</h2>
   <p style="text-align: center;">
-    Feel free to connect with me on LinkedIn, Google Scholar, ResearchGate, or send me an Email!
+    Feel free to connect with me via LinkedIn, Google Scholar, ResearchGate, or send an Email.
   </p>
 </section>
 
@@ -161,16 +224,31 @@
 </footer>
 
 <script>
-function openTab(tabId) {
-  const tabs = document.querySelectorAll('section');
-  tabs.forEach(tab => tab.classList.remove('active'));
+  const tabLinks = document.querySelectorAll('.tab-link');
+  const sections = document.querySelectorAll('section');
 
-  document.getElementById(tabId).classList.add('active');
+  tabLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      tabLinks.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+      const selected = link.getAttribute('data-tab');
+      sections.forEach(section => {
+        section.classList.remove('active');
+        if (section.id === selected) {
+          section.classList.add('active');
+        }
+      });
+    });
+  });
 
-  const links = document.querySelectorAll('.tablink');
-  links.forEach(link => link.classList.remove('active'));
-  event.target.classList.add('active');
-}
+  function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    if (currentTheme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'light');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  }
 </script>
 
 </body>
