@@ -263,4 +263,135 @@
       text-align: center;
       padding: 1rem;
       margin-top: 50px;
-      background: var(--section
+      background: var(--section-bg);
+      color: #777;
+      font-size: 0.9rem;
+      transition: background 0.5s;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="theme-toggle">
+    <div class="switch">
+      <input type="checkbox" id="themeToggle">
+      <span class="slider"></span>
+    </div>
+    <label for="themeToggle">Dark Mode</label>
+  </div>
+
+  <img src="AratrikPic.jpeg" alt="Aratrik Profile Image" />
+  <h1>Aratrik Chattopadhyay</h1>
+
+  <div class="social-links">
+    <a href="https://www.linkedin.com/in/aratrik-chatterjee-72381a121/" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn" />
+    </a>
+    <a href="mailto:aratrik@example.com">
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Gmail" />
+    </a>
+    <a href="https://scholar.google.com/citations?user=nrXPtBgAAAAJ&hl=en" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" alt="Google Scholar" />
+    </a>
+    <a href="https://www.researchgate.net/profile/Aratrik-Chattopadhyay?ev=hdr_xprf" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/ResearchGate_icon_SVG.svg/512px-ResearchGate_icon_SVG.svg.png" alt="ResearchGate" />
+    </a>
+  </div>
+
+  <div class="top-controls">
+    <a href="resume.pdf" class="resume-button" download>Resume</a>
+  </div>
+
+  <nav>
+    <a class="tab-link active" data-tab="about">About</a>
+    <a class="tab-link" data-tab="publications">Publications</a>
+    <a class="tab-link" data-tab="academics">Academics</a>
+    <a class="tab-link" data-tab="news">News</a>
+  </nav>
+</header>
+
+<section id="about" class="active">
+  <h2>About Me</h2>
+  <p>
+    I am a Senior Tech Lead at Mercedes-Benz R&D Pvt. Ltd. I completed my Master's from IISc (Indian Institute of Science) in Computer Science, specializing in 3D Computer Vision.
+    Prior to joining IISc, I completed my B.Tech in Electrical Engineering from Jadavpur University.
+  </p>
+  <li> Research Interests: Generative Modelling, 3D Computer Vision, Facial Attribute Estimation, Hand Pose Estimation, Human Pose Estimation</li>
+</section>
+
+<section id="publications">
+  <h2>Publications</h2>
+  <a class="publication-link" href="https://ieeexplore.ieee.org/abstract/document/10647301" target="_blank">
+    Lercpose: Learned Ranking and Contrastive Loss for Robust Head Pose Estimation, ICIP (Oral) 2024
+  </a>
+  <a class="publication-link" href="https://openaccess.thecvf.com/content/CVPR2024W/EVW/papers/Jha_RAVN_Reinforcement_Aided_Adaptive_Vector_Quantization_of_Deep_Neural_Networks_CVPRW_2024_paper.pdf" target="_blank">
+    RAVN: Reinforcement Aided Adaptive Vector Quantization of Deep Neural Networks, CVPRW 2024
+  </a>
+  <a class="publication-link" href="https://www.sciencedirect.com/science/article/abs/pii/S0167865522001532" target="_blank">
+    Detail Preserving Conditional Random Field as 2-D RNN for Gland Segmentation in Histology Images
+  </a>
+  <a class="publication-link" href="https://arxiv.org/pdf/2011.11078" target="_blank">
+    End-to-End Differentiable 6DoF Object Pose Estimation with Local and Global Constraints, NeurIPS DiffCVGP 2020
+  </a>
+</section>
+
+<section id="academics">
+  <h2>Academics</h2>
+  <div class="academics-list">
+    <div class="academic-entry"><div class="entry-content">Senior Tech-Lead, Mercedes-Benz R&D, Bangalore</div><div class="entry-year">2023</div></div>
+    <div class="academic-entry"><div class="entry-content">Senior Research Engineer, Mercedes-Benz R&D, Bangalore</div><div class="entry-year">2021</div></div>
+    <div class="academic-entry"><div class="entry-content">Junior Engineer, Mercedes-Benz R&D, Bangalore</div><div class="entry-year">2019</div></div>
+    <div class="academic-entry"><div class="entry-content">Research Assistant, Indian Statistical Institute, Kolkata</div><div class="entry-year">2019</div></div>
+    <div class="academic-entry"><div class="entry-content">Master's in Computer Science, Indian Institute of Science (IISc), Bengaluru</div><div class="entry-year">2017</div></div>
+    <div class="academic-entry"><div class="entry-content">Bachelor's in Electrical Engineering, Jadavpur University, Kolkata</div><div class="entry-year">2015</div></div>
+  </div>
+</section>
+
+<section id="news">
+  <h2>News</h2>
+  <ul>
+    <li><strong>Mar 2025:</strong> Technical Publication Award at Mercedes-Benz</li>
+    <li><strong>Sep 2024:</strong> Paper accepted at ICIP 2024 (Oral Presentation)</li>
+    <li><strong>April 2024:</strong> RAVN accepted at CVPR 2024 Workshop (RAVN project)</li>
+    <li><strong>June 2022:</strong> DPCRF got accepted at Pattern Recognition Letters</li>
+    <li><strong>Oct 2020:</strong> End-to-end differentiable 6DoF object pose estimation at NeurIPS DiffCVGP</li>
+    <li><strong>April 2019:</strong> Filed my First Patent!!</li>
+    <li><strong>Jan 2019:</strong> Joined Mercedes-Benz R&D as a junior engineer</li>
+  </ul>
+</section>
+
+<footer>
+  <p>&copy; 2025 Aratrik Chattopadhyay. All rights reserved.</p>
+</footer>
+
+<script>
+  const tabLinks = document.querySelectorAll('.tab-link');
+  const sections = document.querySelectorAll('section');
+  const themeToggle = document.getElementById('themeToggle');
+
+  tabLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      tabLinks.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+      const selected = link.getAttribute('data-tab');
+      sections.forEach(section => {
+        section.classList.remove('active');
+        if (section.id === selected) {
+          section.classList.add('active');
+        }
+      });
+    });
+  });
+
+  themeToggle.addEventListener('change', () => {
+    if (themeToggle.checked) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  });
+</script>
+
+</body>
+</html>
