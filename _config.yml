@@ -4,7 +4,7 @@ description: >-
   Portfolio of Aratrik Chattopadhyay — Senior Tech Lead at Mercedes-Benz R&D
 baseurl: "" 
 url: "https://aratrik.github.io/Aratrik_website/" 
-theme: jekyll-theme-dark-minimal
+theme: jekyll-theme-minimal
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
