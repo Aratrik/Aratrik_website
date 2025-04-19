@@ -3,7 +3,7 @@ email: aratrik@example.com
 description: >- 
   Portfolio of Aratrik Chattopadhyay — Senior Tech Lead at Mercedes-Benz R&D
 baseurl: "" 
-url: "https://your-username.github.io" 
+url: "https://aratrik.github.io/Aratrik_website/" 
 theme: jekyll-theme-dark-minimal
 plugins:
   - jekyll-feed
