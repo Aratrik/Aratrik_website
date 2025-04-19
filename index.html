@@ -159,21 +159,23 @@
     }
 
     nav a {
-      margin: 0 10px;
+      margin: 0 15px;
       text-decoration: none;
       color: var(--text-color);
       font-weight: 600;
-      transition: background 0.3s ease;
-      padding: 6px 14px;
+      transition: color 0.3s ease;
+      cursor: pointer;
+      padding: 5px 10px;
       border-radius: 8px;
     }
 
-    nav a:hover {
-      background-color: rgba(0, 0, 0, 0.05);
+    nav a.active {
+      background-color: transparent;
+      border-bottom: 2px solid #66a6ff;
     }
 
-    nav a.active {
-      background-color: rgba(0, 0, 0, 0.08);
+    nav a:hover {
+      color: #66a6ff;
     }
 
     section {
@@ -214,51 +216,6 @@
       color: var(--link-hover);
     }
 
-    .academic-entry {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(5px);
-      border-radius: 12px;
-      margin: 15px 0;
-      padding: 12px 15px;
-      transition: transform 0.3s ease, background 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      min-height: 80px;
-    }
-
-    .academic-entry:hover {
-      transform: scale(1.03);
-      background: rgba(255, 255, 255, 0.2);
-    }
-
-    .entry-top {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      width: 100%;
-    }
-
-    .entry-logo {
-      width: 26px;
-      height: 26px;
-      object-fit: contain;
-      flex-shrink: 0;
-    }
-
-    .entry-content {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--text-color);
-    }
-
-    .entry-year {
-      margin-top: 8px;
-      font-size: 0.8rem;
-      color: var(--text-color);
-      align-self: flex-start;
-    }
-
     footer {
       text-align: center;
       padding: 1rem;
@@ -268,6 +225,45 @@
       font-size: 0.9rem;
       transition: background 0.5s;
     }
+
+    #academics li {
+      list-style-type: none;
+      position: relative;
+      padding: 15px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    #academics li:hover {
+      transform: scale(1.05);
+      background: #e0e0e0;
+    }
+
+    #academics li img {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      width: 50px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    #academics li .year {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      font-size: 0.8rem;
+      color: var(--text-color);
+      font-weight: 600;
+    }
+
+    #academics li .entry-text {
+      padding-left: 70px;
+    }
+
   </style>
 </head>
 <body>
@@ -313,29 +309,70 @@
 
 <section id="about" class="active">
   <h2>About Me</h2>
-  <p>I am a Senior Tech Lead at Mercedes-Benz R&D Pvt. Ltd...</p>
+  <p>
+    I am a Senior Tech Lead at Mercedes-Benz R&D Pvt. Ltd. I completed my Master's from IISc (Indian Institute of Science)
+    in Computer Science, specializing in 3D Computer Vision. Prior to joining IISc, I completed my B.Tech in Electrical Engineering from Jadavpur University.
+  </p>
+  <li> Research Interests: Generative Modelling, 3D Computer Vision, Facial Attribute estimation, Hand Pose Estimation, Human Pose Estimation</li>
 </section>
 
 <section id="publications">
   <h2>Publications</h2>
-  <!-- your publication links here -->
+  <a class="publication-link" href="https://ieeexplore.ieee.org/abstract/document/10647301" target="_blank">
+    Lercpose: Learned Ranking and Contrastive Loss for Robust Head Pose Estimation, ICIP (Oral) 2024
+  </a>
+  <a class="publication-link" href="https://openaccess.thecvf.com/content/CVPR2024W/EVW/papers/Jha_RAVN_Reinforcement_Aided_Adaptive_Vector_Quantization_of_Deep_Neural_Networks_CVPRW_2024_paper.pdf" target="_blank">
+    RAVN: Reinforcement Aided Adaptive Vector Quantization of Deep Neural Networks, CVPRW 2024
+  </a>
+  <a class="publication-link" href="https://www.sciencedirect.com/science/article/abs/pii/S0167865522001532" target="_blank">
+    Detail Preserving Conditional Random Field as 2-D RNN for Gland Segmentation in Histology Images
+  </a>
+  <a class="publication-link" href="https://arxiv.org/pdf/2011.11078" target="_blank">
+    End-to-End Differentiable 6DoF Object Pose Estimation with Local and Global Constraints, NeurIPS DiffCVGP 2020
+  </a>
 </section>
 
 <section id="academics">
   <h2>Academics</h2>
-  <div class="academic-entry">
-    <div class="entry-top">
-      <img class="entry-logo" src="https://upload.wikimedia.org/wikipedia/commons/9/90/Mercedes-Logo.svg" alt="Mercedes-Benz Logo" />
-      <div class="entry-content">Senior Tech-Lead, Mercedes-Benz R&D, Bangalore</div>
-    </div>
-    <div class="entry-year">2023</div>
-  </div>
-  <!-- Add more academic entries similarly -->
+  <ul>
+    <li><img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Mercedes-Benz_logo_2020.png" alt="Mercedes-Benz Logo">
+      <div class="entry-text">Senior Tech-Lead, Mercedes-Benz R&D, Bangalore</div>
+      <div class="year">2023</div>
+    </li>
+    <li><img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Mercedes-Benz_logo_2020.png" alt="Mercedes-Benz Logo">
+      <div class="entry-text">Senior Research Engineer, Mercedes-Benz R&D, Bangalore</div>
+      <div class="year">2021</div>
+    </li>
+    <li><img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Mercedes-Benz_logo_2020.png" alt="Mercedes-Benz Logo">
+      <div class="entry-text">Junior Engineer, Mercedes-Benz R&D, Bangalore</div>
+      <div class="year">2019</div>
+    </li>
+    <li><img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Mercedes-Benz_logo_2020.png" alt="Mercedes-Benz Logo">
+      <div class="entry-text">Research Assistant, Indian Statistical Institute, Kolkata</div>
+      <div class="year">2019</div>
+    </li>
+    <li><img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Mercedes-Benz_logo_2020.png" alt="Mercedes-Benz Logo">
+      <div class="entry-text">Master's in Computer Science, Indian Institute of Science (IISc), Bengaluru</div>
+      <div class="year">2017</div>
+    </li>
+    <li><img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Mercedes-Benz_logo_2020.png" alt="Mercedes-Benz Logo">
+      <div class="entry-text">Bachelor's in Electrical Engineering, Jadavpur University, Kolkata</div>
+      <div class="year">2015</div>
+    </li>
+  </ul>
 </section>
 
 <section id="news">
   <h2>News</h2>
-  <!-- your news items here -->
+  <ul>
+    <li><strong>Mar 2025:</strong> Technical Publication Award at Mercedes-Benz </li>
+    <li><strong>Sep 2024:</strong> Paper accepted at ICIP 2024 (Oral Presentation)</li>
+    <li><strong>April 2024:</strong> RAVN accepted at CVPR 2024 Workshop (RAVN project)</li>
+    <li><strong>June 2022:</strong> DPCRF got accepted at Pattern Recognition Letters</li>
+    <li><strong>Oct 2020:</strong> End-to-end differentiable 6DoF object pose estimation with local and global constraints got accepted at Neurips DiffCVGP workshop, 2020</li>
+    <li><strong>April 2019:</strong> Filed my First Patent!!</li>
+    <li><strong>Jan 2019:</strong> Joined Mercedes-Benz R&D as a junior engineer</li>
+  </ul>
 </section>
 
 <footer>
@@ -362,7 +399,11 @@
   });
 
   themeToggle.addEventListener('change', () => {
-    document.documentElement.setAttribute('data-theme', themeToggle.checked ? 'dark' : 'light');
+    if (themeToggle.checked) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
   });
 </script>
 
